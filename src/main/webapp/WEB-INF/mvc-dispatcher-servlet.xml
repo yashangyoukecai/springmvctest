@@ -30,5 +30,6 @@
     <bean name="/helloCache" class="com.springapp.mvc.HelloCache">
         <property name="cacheSeconds" value="5"/>
     </bean>
+    <bean name="/helloLastModified" class="com.springapp.mvc.HelloWorldLastModifiedCacheController"/>
 
 </beans>

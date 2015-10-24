@@ -20,7 +20,9 @@
     <!--<bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>-->
 
     <!-- 处理器 -->
-    <bean name="/helloOldController" class="com.springapp.mvc.HelloWorldControllerWithoutRequestMap"/>
+    <bean name="/helloOldController" class="com.springapp.mvc.HelloWorldControllerWithoutRequestMap">
+        <property name="supportedMethods" value="POST"></property>
+    </bean>
 
 
 </beans>

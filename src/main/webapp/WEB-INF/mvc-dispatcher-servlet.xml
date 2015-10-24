@@ -31,5 +31,11 @@
         <property name="cacheSeconds" value="5"/>
     </bean>
     <bean name="/helloLastModified" class="com.springapp.mvc.HelloWorldLastModifiedCacheController"/>
+    <bean name="/simpleForm"
+          class="com.springapp.mvc.RegisterSimpleFormController">
+        <property name="formView" value="register"/>
+        <property name="successView" value="redirect:/success"/>
+    </bean>
+    <bean name="/success" class="com.springapp.mvc.SuccessController"/>
 
 </beans>

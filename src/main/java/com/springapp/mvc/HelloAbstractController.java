@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Created by wklmogujie on 15/10/24.
  */
-public class helloWebContentGenerator extends AbstractController {
+public class HelloAbstractController extends AbstractController {
 
     @Override
     public ModelAndView handleRequestInternal(HttpServletRequest req, HttpServletResponse resp) throws Exception {

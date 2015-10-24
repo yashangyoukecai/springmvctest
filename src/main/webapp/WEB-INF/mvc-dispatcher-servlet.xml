@@ -23,9 +23,12 @@
     <bean name="/helloOldController" class="com.springapp.mvc.HelloWorldControllerWithoutRequestMap">
         <property name="supportedMethods" value="GET"></property>
     </bean>
-    <bean name="/helloPost" class="com.springapp.mvc.helloWebContentGenerator">
+    <bean name="/helloPost" class="com.springapp.mvc.HelloAbstractController">
         <property name="supportedMethods" value="GET"></property>
         <property name="requireSession" value="true"/>
+    </bean>
+    <bean name="/helloCache" class="com.springapp.mvc.HelloCache">
+        <property name="cacheSeconds" value="5"/>
     </bean>
 
 </beans>

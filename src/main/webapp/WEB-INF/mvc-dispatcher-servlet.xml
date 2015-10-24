@@ -14,15 +14,18 @@
 
 
     <!-- HandlerMapping -->
-    <!--<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>-->
+    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
 
-    <!--&lt;!&ndash; HandlerAdapter &ndash;&gt;-->
-    <!--<bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>-->
+    <!-- HandlerAdapter -->
+    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
 
     <!-- 处理器 -->
     <bean name="/helloOldController" class="com.springapp.mvc.HelloWorldControllerWithoutRequestMap">
-        <property name="supportedMethods" value="POST"></property>
+        <property name="supportedMethods" value="GET"></property>
     </bean>
-
+    <bean name="/helloPost" class="com.springapp.mvc.helloWebContentGenerator">
+        <property name="supportedMethods" value="GET"></property>
+        <property name="requireSession" value="true"/>
+    </bean>
 
 </beans>

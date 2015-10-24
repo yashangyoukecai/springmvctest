@@ -13,7 +13,7 @@ public class HelloWorldControllerWithoutRequestMap implements Controller {
 
     @Override
     public ModelAndView handleRequest(HttpServletRequest req, HttpServletResponse resp) throws Exception {
-        if(!supportedMethods.equals("POST")) {
+        if(!supportedMethods.equals("GET")) {
             //1、收集参数、验证参数
             //2、绑定参数到命令对象
             //3、将命令对象传入业务对象进行业务处理

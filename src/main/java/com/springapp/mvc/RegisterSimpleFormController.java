@@ -31,7 +31,7 @@
 //    }
 //    protected void doSubmitAction(Object command) throws Exception {
 //        UserModel user = (UserModel) command;
-//        //TODO 调用业务对象处理
+//
 //        System.out.println(user);
 //    }
 //}

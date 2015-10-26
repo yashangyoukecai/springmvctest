@@ -14,10 +14,10 @@
 
 
     <!-- HandlerMapping -->
-    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+    <!--<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>-->
 
     <!-- HandlerAdapter -->
-    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
+    <!--<bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>-->
 
     <!-- 处理器 -->
     <bean name="/helloOldController" class="com.springapp.mvc.HelloWorldControllerWithoutRequestMap">
@@ -31,11 +31,11 @@
         <property name="cacheSeconds" value="5"/>
     </bean>
     <bean name="/helloLastModified" class="com.springapp.mvc.HelloWorldLastModifiedCacheController"/>
-    <bean name="/simpleForm"
-          class="com.springapp.mvc.RegisterSimpleFormController">
-        <property name="formView" value="register"/>
-        <property name="successView" value="redirect:/success"/>
-    </bean>
+    <!--<bean name="/simpleForm"-->
+          <!--class="com.springapp.mvc.RegisterSimpleFormController">-->
+        <!--<property name="formView" value="register"/>-->
+        <!--<property name="successView" value="redirect:/success"/>-->
+    <!--</bean>-->
     <bean name="/success" class="com.springapp.mvc.SuccessController"/>
 
 </beans>

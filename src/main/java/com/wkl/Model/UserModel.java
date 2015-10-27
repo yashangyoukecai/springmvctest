@@ -1,4 +1,4 @@
-package Model;
+package com.wkl.Model;
 
 /**
  * Created by wklmogujie on 15/10/24.

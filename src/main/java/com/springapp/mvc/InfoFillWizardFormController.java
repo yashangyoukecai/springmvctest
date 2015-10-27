@@ -1,6 +1,6 @@
 //package com.springapp.mvc;
 //
-//import Model.UserModel;
+//import UserModel;
 //import org.springframework.validation.Errors;
 //import org.springframework.web.servlet.ModelAndView;
 //

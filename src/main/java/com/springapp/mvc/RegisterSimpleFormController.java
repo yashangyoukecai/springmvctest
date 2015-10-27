@@ -1,6 +1,6 @@
 //package com.springapp.mvc;
 //
-//import Model.UserModel;
+//import UserModel;
 //
 //import javax.servlet.http.HttpServletRequest;
 //import java.util.Arrays;

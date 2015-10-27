@@ -14,10 +14,10 @@
 </head>
 <body>
 <div>
-  <form action="/app/user/login" id="loginform" method="post">
+  <form action="/user/login" id="loginform" method="post">
     <table align="center" style="padding: 100px">
       <tr>
-        <td>姓名：<input type="text" name="name" id="name" /> *必需 </td>
+        <td>姓名：<input type="text" name="Username" id="Username" /> *必需 </td>
         <td><form:errors path="*"/></td>
       </tr>
       <tr>

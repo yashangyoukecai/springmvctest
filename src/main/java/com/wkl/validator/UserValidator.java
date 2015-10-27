@@ -22,12 +22,12 @@ public class UserValidator implements Validator {
     @Override
     public void validate(Object object, Errors errors) {
         UserModel userVO = (UserModel) object;
-        ValidationUtils.rejectIfEmpty(errors, "name", "user.name.required", "name的内容不能为空");
+        ValidationUtils.rejectIfEmpty(errors, "Username", "user.name.required", "name的内容不能为空");
         ValidationUtils.rejectIfEmpty(errors, "password", "user.password.required", "password的内容不能为空");
 
         int length = userVO.getUsername().length();
         if (length > 20) {
-            errors.rejectValue("name", "user.name.too_long", "用户名不能超过{20}个字符");
+            errors.rejectValue("Username", "user.name.too_long", "用户名不能超过{20}个字符");
         }
         length = userVO.getPassword().length();
         if (length < 6) {

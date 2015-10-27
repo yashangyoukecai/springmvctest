@@ -4,6 +4,7 @@ import com.wkl.Model.UserModel;
 import com.wkl.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.Validator;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,7 +26,7 @@ public class UserController {
     private Validator validator;
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    protected ModelAndView handle(UserModel user, BindingResult result) {
+    protected String handle(UserModel user, BindingResult result, Model model) {
 //        String flag = userService.userLogin(user);
 //        if ("success".equals(flag)) {
 //            Map<String, String> map = new HashMap<String, String>();
@@ -36,21 +37,26 @@ public class UserController {
 //        }
         this.validator.validate(user, result);//添加验证
         if (result.hasErrors()) {
-            ModelAndView modelAndView = new ModelAndView();
-            modelAndView.addObject("user", user);// 把user对象返回到页面， 这样不至于表单被清空了
-            modelAndView.setViewName("index");
-            return modelAndView;
+//            ModelAndView modelAndView = new ModelAndView();
+//            modelAndView.addObject("user", user);// 把user对象返回到页面， 这样不至于表单被清空了
+//            modelAndView.setViewName("index");
+//            return modelAndView;
+            model.addAttribute("user", user);
+            return "index";
         }
 
         String flag = userService.userLogin(user);
         if ("success".equals(flag)) {
-            ModelAndView modelAndView = new ModelAndView();
-            modelAndView.setViewName("success");
-            return modelAndView;
+//            ModelAndView modelAndView = new ModelAndView();
+//            modelAndView.setViewName("success");
+//            return modelAndView;
+              return "success";
         }
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("error");
-        return modelAndView;
+//        ModelAndView modelAndView = new ModelAndView();
+//        modelAndView.setViewName("error");
+//        return modelAndView;
+        model.addAttribute("message", "error password");
+        return "error";
     }
 
 }

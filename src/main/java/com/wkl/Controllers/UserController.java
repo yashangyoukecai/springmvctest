@@ -2,6 +2,7 @@ package com.wkl.Controllers;
 
 import com.wkl.Model.UserModel;
 import com.wkl.Service.UserService;
+import com.wkl.validator.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,7 +24,7 @@ public class UserController {
     private UserService userService;
 
     @Resource
-    private Validator validator;
+    private UserValidator validator;
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     protected String handle(UserModel user, BindingResult result, Model model) {

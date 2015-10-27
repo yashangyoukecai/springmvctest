@@ -1,3 +1,4 @@
+<%@ taglib prefix="textarea" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: wklmogujie
@@ -18,10 +19,11 @@
     <table align="center" style="padding: 100px">
       <tr>
         <td>姓名：<input type="text" name="Username" id="Username" /> *必需 </td>
-        <td><form:errors path="*"/></td>
+        <td><textarea:errors/></td>
       </tr>
       <tr>
-        <td>密码：<input type="password" name="password" id="password"> *必需 </td>
+        <td>密码：<input type="password" name="password" id="password"/> *必需 </td>
+        <td><textarea:errors/></td>
       </tr>
       <tr>
         <td><input type="submit"></td>

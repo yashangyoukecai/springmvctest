@@ -1,12 +1,14 @@
-package com.wkl.ServiceDao;
+package com.wkl.DaoImpl;
 
 import com.wkl.Dao.UserDao;
 import com.wkl.Model.UserModel;
+import org.springframework.stereotype.Service;
 
 /**
  * Created by wklmogujie on 15/10/26.
  */
-public class UserDaoImpl implements UserDao {
+@Service
+public class UserJdbcDaoImpl implements UserDao {
 
     @Override
     public String userLogin(UserModel user) {

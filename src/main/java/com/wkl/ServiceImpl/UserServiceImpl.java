@@ -4,10 +4,13 @@ import com.wkl.Dao.UserDao;
 import com.wkl.Model.UserModel;
 import com.wkl.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
 /**
  * Created by wklmogujie on 15/10/26.
  */
+@Service
 public class UserServiceImpl implements UserService {
 
     @Autowired

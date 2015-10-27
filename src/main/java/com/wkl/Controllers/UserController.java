@@ -25,7 +25,7 @@ public class UserController {
     private Validator validator;
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    protected String handle(UserModel user, BindingResult result, ModelAndView modelAndView) {
+    protected ModelAndView handle(UserModel user, BindingResult result) {
 //        String flag = userService.userLogin(user);
 //        if ("success".equals(flag)) {
 //            Map<String, String> map = new HashMap<String, String>();
@@ -36,15 +36,21 @@ public class UserController {
 //        }
         this.validator.validate(user, result);//添加验证
         if (result.hasErrors()) {
+            ModelAndView modelAndView = new ModelAndView();
             modelAndView.addObject("user", user);// 把user对象返回到页面， 这样不至于表单被清空了
-            return "index";
+            modelAndView.setViewName("index");
+            return modelAndView;
         }
 
         String flag = userService.userLogin(user);
         if ("success".equals(flag)) {
-            return "success";
+            ModelAndView modelAndView = new ModelAndView();
+            modelAndView.setViewName("success");
+            return modelAndView;
         }
-        return "fail";
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("error");
+        return modelAndView;
     }
 
 }
